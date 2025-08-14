@@ -1,0 +1,2363 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Client Portal - Screens</title>
+    <style>
+        /* Basic grid layout */
+        body { 
+            margin: 0; 
+            padding: 20px; 
+            background-color: #f0f0f0; /* Light background for contrast */ 
+            zoom: 0.75; /* Set default zoom to 75% */
+        }
+        .screens-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            gap: 20px; /* Spacing between screens */
+            justify-items: center; /* Center items horizontally */
+            align-items: start; /* Align items to the top */
+        }
+        .screen-item {
+            text-align: center; /* Center text within the item */
+        }
+        .screen-item h3 {
+            font-weight: bold; 
+            font-size: 1.1em; 
+            margin-bottom: 8px; 
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="screens-grid">
+        <div class="screen-item">
+                      <h3>Login Screen</h3>
+                      
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Creations - Client Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .login-phone-frame {
+        width: 375px;
+        min-height: 812px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 40px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border: 1px solid #e2e8f0;
+        margin: 2rem;
+        display: inline-flex;
+        flex-direction: column;
+      }
+      
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      
+      .input-focus:focus {
+        outline: none;
+        border-color: #60a5fa;
+        box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+      }
+      
+      .btn-hover:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      
+      .fade-in {
+        animation: fadeIn 0.8s ease-out;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .admin-access {
+        opacity: 0.3;
+        transition: all 0.3s ease;
+      }
+      
+      .admin-access:hover {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      
+      .logo-clickable {
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .logo-clickable:hover {
+        transform: rotate(5deg) scale(1.05);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="login-phone-frame gradient-bg">
+      <!-- Content Container -->
+      <div class="flex-1 flex flex-col justify-center px-8 py-12">
+        
+        <!-- Logo Section -->
+        <div class="text-center mb-12 fade-in">
+          <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-lg logo-clickable" onclick="adminAccess()" title="Admin Access">
+            <i class="fas fa-star text-3xl text-indigo-600"></i>
+          </div>
+          <h1 class="text-3xl font-bold text-white mb-2">Nova Creations</h1>
+          <p class="text-indigo-100 text-sm">Client Portal</p>
+        </div>
+
+        <!-- Login Form -->
+        <div class="glass-effect rounded-2xl p-6 mb-6 fade-in">
+          <h2 class="text-xl font-semibold text-white mb-6 text-center">Welcome Back</h2>
+          
+          <form class="space-y-4">
+            <!-- Email Input -->
+            <div>
+              <label class="block text-indigo-100 text-sm font-medium mb-2">Email Address</label>
+              <div class="relative">
+                <i class="fas fa-envelope absolute left-3 top-1/2 transform -translate-y-1/2 text-indigo-300"></i>
+                <input 
+                  type="email" 
+                  class="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-indigo-200 input-focus transition-all duration-300"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Password Input -->
+            <div>
+              <label class="block text-indigo-100 text-sm font-medium mb-2">Password</label>
+              <div class="relative">
+                <i class="fas fa-lock absolute left-3 top-1/2 transform -translate-y-1/2 text-indigo-300"></i>
+                <input 
+                  type="password" 
+                  class="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-indigo-200 input-focus transition-all duration-300"
+                  placeholder="Enter your password"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Remember Me & Forgot Password -->
+            <div class="flex items-center justify-between text-sm">
+              <label class="flex items-center text-indigo-100">
+                <input type="checkbox" class="mr-2 rounded">
+                Remember me
+              </label>
+              <a href="#" class="text-indigo-200 hover:text-white transition-colors">Forgot password?</a>
+            </div>
+
+            <!-- Login Button -->
+            <button 
+              type="submit" 
+              class="w-full bg-white text-indigo-600 font-semibold py-3 rounded-lg btn-hover transition-all duration-300 mt-6"
+            >
+              Sign In
+            </button>
+          </form>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center">
+          <p class="text-indigo-100 text-sm">
+            Need help? 
+            <a href="#" class="text-white font-medium hover:underline">Contact Support</a>
+          </p>
+        </div>
+
+        <!-- Admin Access - Discreet -->
+        <div class="text-center mt-4">
+          <button 
+            onclick="adminAccess()" 
+            class="admin-access text-indigo-300 text-xs hover:text-amber-300 transition-all duration-300"
+            title="Admin Panel Access"
+          >
+            <i class="fas fa-cog mr-1"></i>
+            System Access
+          </button>
+        </div>
+
+        <!-- Security Badge -->
+        <div class="flex items-center justify-center mt-8 text-indigo-200 text-xs">
+          <i class="fas fa-shield-alt mr-2"></i>
+          <span>Secured with 256-bit SSL encryption</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let clickCount = 0;
+      let clickTimer = null;
+
+      function adminAccess() {
+        clickCount++;
+        
+        if (clickCount === 1) {
+          clickTimer = setTimeout(() => {
+            clickCount = 0;
+          }, 2000); // Reset after 2 seconds
+        }
+        
+        // Triple click on logo or single click on "System Access" to access admin
+        if (clickCount >= 3 || event.target.closest('button')) {
+          clearTimeout(clickTimer);
+          clickCount = 0;
+          
+          // Show confirmation dialog
+          if (confirm('Access Admin Panel?\n\nThis area is restricted to authorized personnel only.')) {
+            // Redirect to admin login (in a real app, this would be a route change)
+            window.location.href = '#admin-login';
+            
+            // Visual feedback
+            document.body.style.transition = 'all 0.5s ease';
+            document.body.style.filter = 'brightness(0.8)';
+            
+            setTimeout(() => {
+              alert('Redirecting to Admin Panel...');
+              document.body.style.filter = 'brightness(1)';
+            }, 500);
+          }
+        }
+      }
+
+      // Easter egg: Konami code for admin access
+      let konamiCode = [];
+      const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+
+      document.addEventListener('keydown', function(e) {
+        konamiCode.push(e.code);
+        
+        if (konamiCode.length > konamiSequence.length) {
+          konamiCode.shift();
+        }
+        
+        if (konamiCode.join(',') === konamiSequence.join(',')) {
+          konamiCode = [];
+          document.querySelector('.admin-access').style.animation = 'fadeIn 0.5s ease';
+          document.querySelector('.admin-access').style.opacity = '1';
+          document.querySelector('.admin-access').style.color = '#fbbf24';
+          alert('🎉 Admin access unlocked! Click "System Access" below.');
+        }
+      });
+    </script>
+  </body>
+</html>
+
+                    </div>
+<div class="screen-item">
+                      <h3>Dashboard</h3>
+                      
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Creations - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .dashboard-phone-frame {
+        width: 375px;
+        min-height: 812px;
+        background: #f8fafc;
+        border-radius: 40px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border: 1px solid #e2e8f0;
+        margin: 2rem;
+        display: inline-flex;
+        flex-direction: column;
+      }
+      
+      .gradient-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      
+      .service-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      
+      .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+      }
+      
+      .stat-badge {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      
+      .fade-in {
+        animation: fadeIn 0.6s ease-out;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .pulse-dot {
+        animation: pulse 2s infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="dashboard-phone-frame">
+      
+      <!-- Header -->
+      <div class="gradient-header px-6 py-8 text-white">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-3">
+              <i class="fas fa-user text-lg"></i>
+            </div>
+            <div>
+              <h1 class="text-lg font-semibold">Welcome back,</h1>
+              <p class="text-indigo-100 text-sm">Sarah Johnson</p>
+            </div>
+          </div>
+          <div class="relative">
+            <i class="fas fa-bell text-xl"></i>
+            <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full pulse-dot"></div>
+          </div>
+        </div>
+        
+        <div class="bg-white/10 rounded-lg p-3">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-indigo-100 text-xs">Account Status</p>
+              <p class="font-semibold">Active • 3 Services</p>
+            </div>
+            <div class="text-right">
+              <p class="text-indigo-100 text-xs">Next Renewal</p>
+              <p class="font-semibold text-sm">Dec 15, 2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="flex-1 px-6 py-6 space-y-6">
+        
+        <!-- Quick Stats -->
+        <div class="fade-in">
+          <h2 class="text-lg font-semibold text-gray-800 mb-4">This Month's Overview</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-gray-500 text-xs">Total Visits</p>
+                  <p class="text-xl font-bold text-gray-800">12.4K</p>
+                </div>
+                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-arrow-up text-green-600 text-sm"></i>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-gray-500 text-xs">Engagement</p>
+                  <p class="text-xl font-bold text-gray-800">8.2%</p>
+                </div>
+                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-heart text-blue-600 text-sm"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Cards -->
+        <div class="fade-in">
+          <h2 class="text-lg font-semibold text-gray-800 mb-4">Your Services</h2>
+          
+          <!-- Website Design & SEO -->
+          <div class="service-card p-5 mb-4">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center">
+                <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-3">
+                  <i class="fas fa-globe text-indigo-600 text-lg"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800">Website & SEO</h3>
+                  <p class="text-gray-500 text-sm">Performance tracking</p>
+                </div>
+              </div>
+              <div class="stat-badge text-white px-3 py-1 rounded-full text-xs font-medium">
+                SEO: 85
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <p class="text-gray-500 text-xs">Monthly Visits</p>
+                <p class="font-semibold text-gray-800">8,247</p>
+              </div>
+              <div>
+                <p class="text-gray-500 text-xs">Top Keywords</p>
+                <p class="font-semibold text-gray-800">12 Ranking</p>
+              </div>
+            </div>
+            <button class="w-full bg-indigo-50 text-indigo-600 font-medium py-2 rounded-lg hover:bg-indigo-100 transition-colors">
+              View Details
+            </button>
+          </div>
+
+          <!-- Social Media Marketing -->
+          <div class="service-card p-5 mb-4">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center">
+                <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mr-3">
+                  <i class="fas fa-share-alt text-pink-600 text-lg"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800">Social Media</h3>
+                  <p class="text-gray-500 text-sm">Growth & engagement</p>
+                </div>
+              </div>
+              <div class="stat-badge text-white px-3 py-1 rounded-full text-xs font-medium">
+                +247
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <p class="text-gray-500 text-xs">New Followers</p>
+                <p class="font-semibold text-gray-800">247</p>
+              </div>
+              <div>
+                <p class="text-gray-500 text-xs">Engagement Rate</p>
+                <p class="font-semibold text-gray-800">8.2%</p>
+              </div>
+            </div>
+            <button class="w-full bg-pink-50 text-pink-600 font-medium py-2 rounded-lg hover:bg-pink-100 transition-colors">
+              View Details
+            </button>
+          </div>
+
+          <!-- Google & Meta Ads -->
+          <div class="service-card p-5 mb-4">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                  <i class="fas fa-bullhorn text-green-600 text-lg"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800">Paid Advertising</h3>
+                  <p class="text-gray-500 text-sm">Campaign performance</p>
+                </div>
+              </div>
+              <div class="stat-badge text-white px-3 py-1 rounded-full text-xs font-medium">
+                $2.45 CPC
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <p class="text-gray-500 text-xs">Conversions</p>
+                <p class="font-semibold text-gray-800">34</p>
+              </div>
+              <div>
+                <p class="text-gray-500 text-xs">CTR</p>
+                <p class="font-semibold text-gray-800">3.8%</p>
+              </div>
+            </div>
+            <button class="w-full bg-green-50 text-green-600 font-medium py-2 rounded-lg hover:bg-green-100 transition-colors">
+              View Details
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Navigation -->
+      <div class="bg-white border-t border-gray-200 px-6 py-4">
+        <div class="flex items-center justify-around">
+          <div class="flex flex-col items-center">
+            <i class="fas fa-home text-indigo-600 text-lg mb-1"></i>
+            <span class="text-indigo-600 text-xs font-medium">Dashboard</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-chart-bar text-gray-400 text-lg mb-1"></i>
+            <span class="text-gray-400 text-xs">Reports</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-folder text-gray-400 text-lg mb-1"></i>
+            <span class="text-gray-400 text-xs">Resources</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-envelope text-gray-400 text-lg mb-1"></i>
+            <span class="text-gray-400 text-xs">Messages</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+                    </div>
+<div class="screen-item">
+                      <h3>Service Details</h3>
+                      
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Creations - Website & SEO Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .service-details-phone-frame {
+        width: 375px;
+        min-height: 812px;
+        background: #f8fafc;
+        border-radius: 40px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border: 1px solid #e2e8f0;
+        margin: 2rem;
+        display: inline-flex;
+        flex-direction: column;
+      }
+      
+      .gradient-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      
+      .metric-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      
+      .chart-container {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      
+      .fade-in {
+        animation: fadeIn 0.6s ease-out;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .progress-bar {
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="service-details-phone-frame">
+      
+      <!-- Header -->
+      <div class="gradient-header px-6 py-6 text-white">
+        <div class="flex items-center justify-between mb-4">
+          <button class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <h1 class="text-lg font-semibold">Website & SEO</h1>
+          <button class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+            <i class="fas fa-share-alt"></i>
+          </button>
+        </div>
+        
+        <div class="bg-white/10 rounded-lg p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-indigo-100 text-sm">Current Month Performance</span>
+            <span class="text-white font-semibold">November 2024</span>
+          </div>
+          <div class="flex items-center">
+            <div class="flex-1 bg-white/20 rounded-full h-2 mr-3">
+              <div class="progress-bar h-2 rounded-full" style="width: 85%"></div>
+            </div>
+            <span class="text-white font-bold">85%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="flex-1 px-6 py-6 space-y-6">
+        
+        <!-- Key Metrics -->
+        <div class="fade-in">
+          <h2 class="text-lg font-semibold text-gray-800 mb-4">Key Metrics</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="metric-card p-4">
+              <div class="flex items-center justify-between mb-2">
+                <i class="fas fa-eye text-indigo-600 text-lg"></i>
+                <span class="text-green-500 text-sm font-medium">+12%</span>
+              </div>
+              <p class="text-gray-500 text-xs">Total Visits</p>
+              <p class="text-xl font-bold text-gray-800">8,247</p>
+            </div>
+            
+            <div class="metric-card p-4">
+              <div class="flex items-center justify-between mb-2">
+                <i class="fas fa-search text-indigo-600 text-lg"></i>
+                <span class="text-green-500 text-sm font-medium">+5</span>
+              </div>
+              <p class="text-gray-500 text-xs">SEO Score</p>
+              <p class="text-xl font-bold text-gray-800">85</p>
+            </div>
+            
+            <div class="metric-card p-4">
+              <div class="flex items-center justify-between mb-2">
+                <i class="fas fa-clock text-indigo-600 text-lg"></i>
+                <span class="text-red-500 text-sm font-medium">-8s</span>
+              </div>
+              <p class="text-gray-500 text-xs">Avg. Session</p>
+              <p class="text-xl font-bold text-gray-800">2:34</p>
+            </div>
+            
+            <div class="metric-card p-4">
+              <div class="flex items-center justify-between mb-2">
+                <i class="fas fa-percentage text-indigo-600 text-lg"></i>
+                <span class="text-green-500 text-sm font-medium">+2.1%</span>
+              </div>
+              <p class="text-gray-500 text-xs">Bounce Rate</p>
+              <p class="text-xl font-bold text-gray-800">32.5%</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Traffic Trend Chart -->
+        <div class="fade-in">
+          <div class="chart-container p-5">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="font-semibold text-gray-800">Traffic Trends</h3>
+              <select class="text-sm text-gray-600 bg-gray-50 rounded-lg px-3 py-1">
+                <option>Last 6 months</option>
+                <option>Last 3 months</option>
+                <option>Last month</option>
+              </select>
+            </div>
+            <canvas id="trafficChart" width="300" height="150"></canvas>
+          </div>
+        </div>
+
+        <!-- Top Pages -->
+        <div class="fade-in">
+          <div class="bg-white rounded-lg p-5 shadow-sm">
+            <h3 class="font-semibold text-gray-800 mb-4">Top Performing Pages</h3>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between py-2">
+                <div class="flex-1">
+                  <p class="font-medium text-gray-800 text-sm">/services</p>
+                  <p class="text-gray-500 text-xs">2,847 visits</p>
+                </div>
+                <div class="w-16 bg-gray-200 rounded-full h-2">
+                  <div class="bg-indigo-600 h-2 rounded-full" style="width: 85%"></div>
+                </div>
+              </div>
+              
+              <div class="flex items-center justify-between py-2">
+                <div class="flex-1">
+                  <p class="font-medium text-gray-800 text-sm">/about</p>
+                  <p class="text-gray-500 text-xs">1,923 visits</p>
+                </div>
+                <div class="w-16 bg-gray-200 rounded-full h-2">
+                  <div class="bg-indigo-600 h-2 rounded-full" style="width: 58%"></div>
+                </div>
+              </div>
+              
+              <div class="flex items-center justify-between py-2">
+                <div class="flex-1">
+                  <p class="font-medium text-gray-800 text-sm">/contact</p>
+                  <p class="text-gray-500 text-xs">1,456 visits</p>
+                </div>
+                <div class="w-16 bg-gray-200 rounded-full h-2">
+                  <div class="bg-indigo-600 h-2 rounded-full" style="width: 44%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Keyword Rankings -->
+        <div class="fade-in">
+          <div class="bg-white rounded-lg p-5 shadow-sm">
+            <h3 class="font-semibold text-gray-800 mb-4">Keyword Rankings</h3>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-medium text-gray-800 text-sm">digital marketing agency</p>
+                  <p class="text-gray-500 text-xs">Position 3</p>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-arrow-up text-green-500 text-sm mr-1"></i>
+                  <span class="text-green-500 text-sm font-medium">+2</span>
+                </div>
+              </div>
+              
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-medium text-gray-800 text-sm">web design services</p>
+                  <p class="text-gray-500 text-xs">Position 7</p>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-arrow-up text-green-500 text-sm mr-1"></i>
+                  <span class="text-green-500 text-sm font-medium">+1</span>
+                </div>
+              </div>
+              
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-medium text-gray-800 text-sm">SEO optimization</p>
+                  <p class="text-gray-500 text-xs">Position 12</p>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-minus text-gray-400 text-sm mr-1"></i>
+                  <span class="text-gray-400 text-sm font-medium">0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="fade-in">
+          <button class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+            View Past Reports
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Traffic Chart
+      const ctx = document.getElementById('trafficChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
+          datasets: [{
+            label: 'Website Visits',
+            data: [6200, 6800, 7200, 7800, 8100, 8247],
+            borderColor: '#667eea',
+            backgroundColor: 'rgba(102, 126, 234, 0.1)',
+            borderWidth: 3,
+            fill: true,
+            tension: 0.4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: false,
+              grid: {
+                color: '#f1f5f9'
+              }
+            },
+            x: {
+              grid: {
+                display: false
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+
+                    </div>
+<div class="screen-item">
+                      <h3>Messages</h3>
+                      
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Creations - Messages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .messages-phone-frame {
+        width: 375px;
+        min-height: 812px;
+        background: #f8fafc;
+        border-radius: 40px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border: 1px solid #e2e8f0;
+        margin: 2rem;
+        display: inline-flex;
+        flex-direction: column;
+      }
+      
+      .gradient-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      
+      .message-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+      
+      .message-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      
+      .status-badge {
+        font-size: 10px;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-weight: 600;
+      }
+      
+      .status-pending {
+        background: #fef3c7;
+        color: #d97706;
+      }
+      
+      .status-in-progress {
+        background: #dbeafe;
+        color: #2563eb;
+      }
+      
+      .status-completed {
+        background: #d1fae5;
+        color: #059669;
+      }
+      
+      .fade-in {
+        animation: fadeIn 0.6s ease-out;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .floating-button {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 50%;
+        box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+        transition: all 0.3s ease;
+      }
+      
+      .floating-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 12px 24px rgba(102, 126, 234, 0.4);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="messages-phone-frame">
+      
+      <!-- Header -->
+      <div class="gradient-header px-6 py-6 text-white">
+        <div class="flex items-center justify-between mb-4">
+          <button class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <h1 class="text-lg font-semibold">Messages</h1>
+          <button class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        
+        <div class="bg-white/10 rounded-lg p-3">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-indigo-100 text-xs">Support Team</p>
+              <p class="font-semibold">Available 9 AM - 6 PM EST</p>
+            </div>
+            <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="flex-1 px-6 py-6 space-y-4">
+        
+        <!-- Message Threads -->
+        <div class="fade-in">
+          <h2 class="text-lg font-semibold text-gray-800 mb-4">Recent Conversations</h2>
+          
+          <!-- Message 1 -->
+          <div class="message-card p-4 mb-4">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center">
+                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center mr-3">
+                  <i class="fas fa-headset text-indigo-600"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800 text-sm">Website Performance Question</h3>
+                  <p class="text-gray-500 text-xs">Nova Support Team</p>
+                </div>
+              </div>
+              <span class="status-badge status-completed">Resolved</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              "Hi Sarah, I noticed my website traffic dropped last week. Could you help me understand what might have caused this?"
+            </p>
+            <div class="flex items-center justify-between text-xs text-gray-500">
+              <span>Nov 15, 2024 • 2:30 PM</span>
+              <div class="flex items-center">
+                <i class="fas fa-reply mr-1"></i>
+                <span>3 replies</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message 2 -->
+          <div class="message-card p-4 mb-4">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center">
+                <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-3">
+                  <i class="fas fa-share-alt text-pink-600"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800 text-sm">Social Media Content Request</h3>
+                  <p class="text-gray-500 text-xs">Marketing Team</p>
+                </div>
+              </div>
+              <span class="status-badge status-in-progress">In Progress</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              "Can we schedule some holiday-themed posts for December? I'd like to promote our year-end services."
+            </p>
+            <div class="flex items-center justify-between text-xs text-gray-500">
+              <span>Nov 18, 2024 • 10:15 AM</span>
+              <div class="flex items-center">
+                <i class="fas fa-reply mr-1"></i>
+                <span>1 reply</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message 3 -->
+          <div class="message-card p-4 mb-4">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center">
+                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                  <i class="fas fa-bullhorn text-green-600"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800 text-sm">Ad Campaign Budget Adjustment</h3>
+                  <p class="text-gray-500 text-xs">Ads Team</p>
+                </div>
+              </div>
+              <span class="status-badge status-pending">Pending</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              "I'd like to increase my Google Ads budget for the holiday season. What would you recommend?"
+            </p>
+            <div class="flex items-center justify-between text-xs text-gray-500">
+              <span>Nov 20, 2024 • 4:45 PM</span>
+              <div class="flex items-center">
+                <i class="fas fa-clock mr-1"></i>
+                <span>Awaiting response</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message 4 -->
+          <div class="message-card p-4 mb-4">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center">
+                <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                  <i class="fas fa-robot text-purple-600"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800 text-sm">AI Agent Training Update</h3>
+                  <p class="text-gray-500 text-xs">AI Team</p>
+                </div>
+              </div>
+              <span class="status-badge status-completed">Resolved</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              "The AI agent seems to be handling customer inquiries well. Can we add more FAQ responses?"
+            </p>
+            <div class="flex items-center justify-between text-xs text-gray-500">
+              <span>Nov 12, 2024 • 1:20 PM</span>
+              <div class="flex items-center">
+                <i class="fas fa-reply mr-1"></i>
+                <span>2 replies</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="fade-in">
+          <h3 class="font-semibold text-gray-800 mb-3">Quick Actions</h3>
+          <div class="grid grid-cols-2 gap-3">
+            <button class="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+              <i class="fas fa-question-circle text-indigo-600 text-xl mb-2"></i>
+              <p class="text-sm font-medium text-gray-800">General Question</p>
+            </button>
+            <button class="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+              <i class="fas fa-bug text-red-600 text-xl mb-2"></i>
+              <p class="text-sm font-medium text-gray-800">Report Issue</p>
+            </button>
+            <button class="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+              <i class="fas fa-lightbulb text-yellow-600 text-xl mb-2"></i>
+              <p class="text-sm font-medium text-gray-800">Feature Request</p>
+            </button>
+            <button class="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+              <i class="fas fa-calendar text-blue-600 text-xl mb-2"></i>
+              <p class="text-sm font-medium text-gray-800">Schedule Meeting</p>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating New Message Button -->
+      <button class="floating-button flex items-center justify-center text-white">
+        <i class="fas fa-plus text-xl"></i>
+      </button>
+
+      <!-- Bottom Navigation -->
+      <div class="bg-white border-t border-gray-200 px-6 py-4">
+        <div class="flex items-center justify-around">
+          <div class="flex flex-col items-center">
+            <i class="fas fa-home text-gray-400 text-lg mb-1"></i>
+            <span class="text-gray-400 text-xs">Dashboard</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-chart-bar text-gray-400 text-lg mb-1"></i>
+            <span class="text-gray-400 text-xs">Reports</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-folder text-gray-400 text-lg mb-1"></i>
+            <span class="text-gray-400 text-xs">Resources</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-envelope text-indigo-600 text-lg mb-1"></i>
+            <span class="text-indigo-600 text-xs font-medium">Messages</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+                    </div>
+<div class="screen-item">
+                      <h3>Admin Login</h3>
+                      
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Creations - Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .admin-login-phone-frame {
+        width: 375px;
+        min-height: 812px;
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        border-radius: 40px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border: 1px solid #e2e8f0;
+        margin: 2rem;
+        display: inline-flex;
+        flex-direction: column;
+      }
+      
+      .admin-gradient-bg {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      }
+      
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      
+      .input-focus:focus {
+        outline: none;
+        border-color: #f59e0b;
+        box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+      }
+      
+      .btn-hover:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      
+      .fade-in {
+        animation: fadeIn 0.8s ease-out;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .admin-badge {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      }
+      
+      .auto-fill-btn {
+        background: rgba(245, 158, 11, 0.2);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        transition: all 0.3s ease;
+      }
+      
+      .auto-fill-btn:hover {
+        background: rgba(245, 158, 11, 0.3);
+        transform: scale(1.02);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="admin-login-phone-frame admin-gradient-bg">
+      <!-- Content Container -->
+      <div class="flex-1 flex flex-col justify-center px-8 py-12">
+        
+        <!-- Admin Badge -->
+        <div class="text-center mb-8 fade-in">
+          <div class="admin-badge w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center shadow-lg">
+            <i class="fas fa-shield-alt text-2xl text-white"></i>
+          </div>
+          <div class="bg-amber-500/20 text-amber-300 px-4 py-2 rounded-full text-sm font-medium inline-block mb-4">
+            <i class="fas fa-crown mr-2"></i>
+            ADMIN ACCESS
+          </div>
+        </div>
+
+        <!-- Logo Section -->
+        <div class="text-center mb-12 fade-in">
+          <div class="w-20 h-20 mx-auto mb-4 bg-white/10 rounded-full flex items-center justify-center shadow-lg">
+            <i class="fas fa-star text-3xl text-amber-400"></i>
+          </div>
+          <h1 class="text-3xl font-bold text-white mb-2">Nova Creations</h1>
+          <p class="text-slate-300 text-sm">Admin Dashboard</p>
+        </div>
+
+        <!-- Quick Access Button -->
+        <div class="text-center mb-6 fade-in">
+          <button 
+            onclick="autoFillCredentials()" 
+            class="auto-fill-btn text-amber-300 px-4 py-2 rounded-lg text-sm font-medium hover:text-amber-200 transition-all duration-300"
+          >
+            <i class="fas fa-bolt mr-2"></i>
+            Quick Admin Login
+          </button>
+        </div>
+
+        <!-- Login Form -->
+        <div class="glass-effect rounded-2xl p-6 mb-6 fade-in">
+          <h2 class="text-xl font-semibold text-white mb-6 text-center">Admin Login</h2>
+          
+          <form class="space-y-4" onsubmit="handleAdminLogin(event)">
+            <!-- Admin Email Input -->
+            <div>
+              <label class="block text-slate-200 text-sm font-medium mb-2">Admin Email</label>
+              <div class="relative">
+                <i class="fas fa-user-shield absolute left-3 top-1/2 transform -translate-y-1/2 text-amber-300"></i>
+                <input 
+                  type="email" 
+                  id="adminEmail"
+                  class="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-slate-300 input-focus transition-all duration-300"
+                  placeholder="admin@novacreations.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Admin Password Input -->
+            <div>
+              <label class="block text-slate-200 text-sm font-medium mb-2">Admin Password</label>
+              <div class="relative">
+                <i class="fas fa-key absolute left-3 top-1/2 transform -translate-y-1/2 text-amber-300"></i>
+                <input 
+                  type="password" 
+                  id="adminPassword"
+                  class="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-slate-300 input-focus transition-all duration-300"
+                  placeholder="Enter admin password"
+                  required
+                />
+                <button 
+                  type="button" 
+                  onclick="togglePasswordVisibility()" 
+                  class="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-amber-300 transition-colors"
+                >
+                  <i class="fas fa-eye" id="passwordToggle"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Two-Factor Authentication -->
+            <div>
+              <label class="block text-slate-200 text-sm font-medium mb-2">2FA Code (Optional)</label>
+              <div class="relative">
+                <i class="fas fa-mobile-alt absolute left-3 top-1/2 transform -translate-y-1/2 text-amber-300"></i>
+                <input 
+                  type="text" 
+                  class="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-slate-300 input-focus transition-all duration-300"
+                  placeholder="6-digit code"
+                  maxlength="6"
+                />
+              </div>
+            </div>
+
+            <!-- Admin Login Button -->
+            <button 
+              type="submit" 
+              class="w-full admin-badge text-white font-semibold py-3 rounded-lg btn-hover transition-all duration-300 mt-6"
+            >
+              <i class="fas fa-sign-in-alt mr-2"></i>
+              Access Admin Panel
+            </button>
+          </form>
+        </div>
+
+        <!-- Security Notice -->
+        <div class="bg-red-500/20 border border-red-500/30 rounded-lg p-4 mb-6 fade-in">
+          <div class="flex items-center text-red-300">
+            <i class="fas fa-exclamation-triangle mr-3 text-lg"></i>
+            <div>
+              <p class="font-medium text-sm">Security Notice</p>
+              <p class="text-xs">All admin activities are logged and monitored</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center">
+          <p class="text-slate-300 text-sm mb-2">
+            <a href="#" onclick="goBackToClientLogin()" class="text-amber-400 font-medium hover:underline">← Back to Client Login</a>
+          </p>
+          <p class="text-slate-400 text-xs">
+            Admin access is restricted and monitored
+          </p>
+        </div>
+
+        <!-- Security Badge -->
+        <div class="flex items-center justify-center mt-8 text-slate-400 text-xs">
+          <i class="fas fa-lock mr-2"></i>
+          <span>Enterprise-grade security</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Admin credentials
+      const ADMIN_EMAIL = 'admin@novacreations.com';
+      const ADMIN_PASSWORD = 'novacreatenova111';
+
+      function autoFillCredentials() {
+        document.getElementById('adminEmail').value = ADMIN_EMAIL;
+        document.getElementById('adminPassword').value = ADMIN_PASSWORD;
+        
+        // Visual feedback
+        const button = event.target.closest('button');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check mr-2"></i>Credentials Filled';
+        button.style.background = 'rgba(16, 185, 129, 0.3)';
+        button.style.borderColor = 'rgba(16, 185, 129, 0.5)';
+        button.style.color = '#10b981';
+        
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.style.background = 'rgba(245, 158, 11, 0.2)';
+          button.style.borderColor = 'rgba(245, 158, 11, 0.3)';
+          button.style.color = '#fbbf24';
+        }, 2000);
+      }
+
+      function togglePasswordVisibility() {
+        const passwordInput = document.getElementById('adminPassword');
+        const toggleIcon = document.getElementById('passwordToggle');
+        
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          toggleIcon.className = 'fas fa-eye-slash';
+        } else {
+          passwordInput.type = 'password';
+          toggleIcon.className = 'fas fa-eye';
+        }
+      }
+
+      function handleAdminLogin(event) {
+        event.preventDefault();
+        
+        const email = document.getElementById('adminEmail').value;
+        const password = document.getElementById('adminPassword').value;
+        
+        // Validate credentials
+        if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+          // Success animation
+          const form = event.target;
+          form.style.transition = 'all 0.5s ease';
+          form.style.transform = 'scale(0.95)';
+          form.style.opacity = '0.8';
+          
+          setTimeout(() => {
+            alert('✅ Admin login successful!\n\nRedirecting to Admin Dashboard...');
+            // In a real app, this would redirect to the admin dashboard
+            window.location.href = '#admin-dashboard';
+          }, 500);
+          
+        } else {
+          // Error handling
+          const inputs = [document.getElementById('adminEmail'), document.getElementById('adminPassword')];
+          inputs.forEach(input => {
+            input.style.borderColor = '#ef4444';
+            input.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
+            
+            setTimeout(() => {
+              input.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+              input.style.boxShadow = 'none';
+            }, 3000);
+          });
+          
+          alert('❌ Invalid admin credentials!\n\nPlease check your email and password.');
+        }
+      }
+
+      function goBackToClientLogin() {
+        if (confirm('Return to client login page?')) {
+          window.location.href = '#client-login';
+        }
+      }
+
+      // Auto-focus on email field when page loads
+      window.addEventListener('load', () => {
+        document.getElementById('adminEmail').focus();
+      });
+
+      // Keyboard shortcut: Ctrl + Shift + A for quick fill
+      document.addEventListener('keydown', (e) => {
+        if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+          e.preventDefault();
+          autoFillCredentials();
+        }
+      });
+    </script>
+  </body>
+</html>
+
+                    </div>
+<div class="screen-item">
+                      <h3>Admin Dashboard</h3>
+                      
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Creations - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .admin-dashboard-phone-frame {
+        width: 375px;
+        min-height: 812px;
+        background: #f8fafc;
+        border-radius: 40px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border: 1px solid #e2e8f0;
+        margin: 2rem;
+        display: inline-flex;
+        flex-direction: column;
+      }
+      
+      .admin-gradient-header {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      }
+      
+      .client-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+      
+      .client-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+      
+      .service-tag {
+        font-size: 10px;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-weight: 600;
+      }
+      
+      .fade-in {
+        animation: fadeIn 0.6s ease-out;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .floating-add-button {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        border-radius: 50%;
+        box-shadow: 0 8px 16px rgba(245, 158, 11, 0.3);
+        transition: all 0.3s ease;
+      }
+      
+      .floating-add-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 12px 24px rgba(245, 158, 11, 0.4);
+      }
+      
+      .empty-state {
+        text-align: center;
+        padding: 3rem 2rem;
+        color: #6b7280;
+      }
+      
+      .empty-state i {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        opacity: 0.3;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="admin-dashboard-phone-frame">
+      
+      <!-- Header -->
+      <div class="admin-gradient-header px-6 py-8 text-white">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mr-3">
+              <i class="fas fa-crown text-lg text-white"></i>
+            </div>
+            <div>
+              <h1 class="text-lg font-semibold">Admin Dashboard</h1>
+              <p class="text-slate-300 text-sm">Client Management</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+              <i class="fas fa-search"></i>
+            </button>
+            <button class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+              <i class="fas fa-cog"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-3 gap-4">
+          <div class="bg-white/10 rounded-lg p-3 text-center">
+            <p class="text-2xl font-bold" id="totalClients">0</p>
+            <p class="text-slate-300 text-xs">Total Clients</p>
+          </div>
+          <div class="bg-white/10 rounded-lg p-3 text-center">
+            <p class="text-2xl font-bold" id="activeServices">0</p>
+            <p class="text-slate-300 text-xs">Active Services</p>
+          </div>
+          <div class="bg-white/10 rounded-lg p-3 text-center">
+            <p class="text-2xl font-bold" id="monthlyRevenue">$0</p>
+            <p class="text-slate-300 text-xs">Monthly Revenue</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="flex-1 px-6 py-6 space-y-4">
+        
+        <!-- Quick Actions -->
+        <div class="fade-in">
+          <h2 class="text-lg font-semibold text-gray-800 mb-4">Quick Actions</h2>
+          <div class="grid grid-cols-2 gap-3">
+            <button class="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+              <i class="fas fa-user-plus text-amber-600 text-xl mb-2"></i>
+              <p class="text-sm font-medium text-gray-800">Add Client</p>
+            </button>
+            <button class="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+              <i class="fas fa-chart-line text-blue-600 text-xl mb-2"></i>
+              <p class="text-sm font-medium text-gray-800">Update Stats</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- Client List -->
+        <div class="fade-in">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-lg font-semibold text-gray-800">Client List</h2>
+            <button class="text-amber-600 text-sm font-medium">View All</button>
+          </div>
+          
+          <!-- Empty State -->
+          <div class="bg-white rounded-lg shadow-sm" id="clientList">
+            <div class="empty-state">
+              <i class="fas fa-users"></i>
+              <h3 class="text-lg font-semibold text-gray-700 mb-2">No Clients Yet</h3>
+              <p class="text-gray-500 mb-4">Start by adding your first client to the system.</p>
+              <button class="bg-amber-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-amber-700 transition-colors">
+                <i class="fas fa-plus mr-2"></i>
+                Add First Client
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Getting Started -->
+        <div class="fade-in">
+          <div class="bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl p-5 text-white">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-rocket text-2xl mr-3"></i>
+              <div>
+                <h3 class="font-bold text-lg">Welcome to Nova Creations</h3>
+                <p class="text-amber-100 text-sm">Your client management system is ready</p>
+              </div>
+            </div>
+            
+            <div class="bg-white/20 rounded-lg p-3 mb-4">
+              <p class="text-sm">
+                <i class="fas fa-lightbulb mr-2"></i>
+                Start by adding your first client and assigning services to begin tracking their performance and managing their accounts.
+              </p>
+            </div>
+            
+            <button class="w-full bg-white text-amber-600 font-semibold py-3 rounded-lg hover:bg-gray-50 transition-colors">
+              <i class="fas fa-play mr-2"></i>
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Add Client Button -->
+      <button class="floating-add-button flex items-center justify-center text-white">
+        <i class="fas fa-plus text-xl"></i>
+      </button>
+
+      <!-- Bottom Navigation -->
+      <div class="bg-white border-t border-gray-200 px-6 py-4">
+        <div class="flex items-center justify-around">
+          <div class="flex flex-col items-center">
+            <i class="fas fa-tachometer-alt text-amber-600 text-lg mb-1"></i>
+            <span class="text-amber-600 text-xs font-medium">Dashboard</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-users text-gray-400 text-lg mb-1"></i>
+            <span class="text-gray-400 text-xs">Clients</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-chart-bar text-gray-400 text-lg mb-1"></i>
+            <span class="text-gray-400 text-xs">Analytics</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-cog text-gray-400 text-lg mb-1"></i>
+            <span class="text-gray-400 text-xs">Settings</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Initialize dashboard with empty state
+      function initializeDashboard() {
+        // Set initial stats to 0
+        document.getElementById('totalClients').textContent = '0';
+        document.getElementById('activeServices').textContent = '0';
+        document.getElementById('monthlyRevenue').textContent = '$0';
+        
+        // Show empty state
+        showEmptyState();
+      }
+      
+      function showEmptyState() {
+        const clientList = document.getElementById('clientList');
+        // Empty state is already in the HTML
+      }
+      
+      // Function to add client (would connect to your backend)
+      function addClient(clientData) {
+        // This would integrate with your actual database
+        console.log('Adding client:', clientData);
+        
+        // Update stats
+        updateDashboardStats();
+      }
+      
+      function updateDashboardStats() {
+        // This would fetch real data from your database
+        // For now, it's just a placeholder function
+      }
+      
+      // Initialize dashboard when page loads
+      window.addEventListener('load', initializeDashboard);
+    </script>
+  </body>
+</html>
+
+                    </div>
+<div class="screen-item">
+                      <h3>Services Page</h3>
+                      
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Creations - Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .services-phone-frame {
+        width: 375px;
+        min-height: 812px;
+        background: #f8fafc;
+        border-radius: 40px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border: 1px solid #e2e8f0;
+        margin: 2rem;
+        display: inline-flex;
+        flex-direction: column;
+      }
+      
+      .gradient-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      
+      .service-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px -3px rgba(0, 0, 0, 0.15);
+      }
+      
+      .service-card.active {
+        border: 2px solid #667eea;
+        background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
+      }
+      
+      .service-card.active::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      
+      .price-tag {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      
+      .starter-fee {
+        background: #fbbf24;
+        color: #92400e;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 600;
+      }
+      
+      .active-badge {
+        background: #10b981;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      
+      .fade-in {
+        animation: fadeIn 0.6s ease-out;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .feature-list li {
+        position: relative;
+        padding-left: 20px;
+      }
+      
+      .feature-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #10b981;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="services-phone-frame">
+      
+      <!-- Header -->
+      <div class="gradient-header px-6 py-6 text-white">
+        <div class="flex items-center justify-between mb-4">
+          <button class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <h1 class="text-lg font-semibold">Services</h1>
+          <button class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+            <i class="fas fa-filter"></i>
+          </button>
+        </div>
+        
+        <div class="bg-white/10 rounded-lg p-3">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-indigo-100 text-xs">Your Current Plan</p>
+              <p class="font-semibold">Premium Package • 3 Services</p>
+            </div>
+            <div class="text-right">
+              <p class="text-indigo-100 text-xs">Monthly Total</p>
+              <p class="font-semibold text-lg">$900</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="flex-1 px-6 py-6 space-y-6">
+        
+        <!-- Current Services -->
+        <div class="fade-in">
+          <h2 class="text-lg font-semibold text-gray-800 mb-4">Your Active Services</h2>
+          
+          <!-- Website Design & SEO - Active -->
+          <div class="service-card active p-5 mb-4">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center">
+                <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mr-4">
+                  <i class="fas fa-globe text-indigo-600 text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-gray-800">Website Design & SEO</h3>
+                  <p class="text-gray-600 text-sm">Complete web presence solution</p>
+                </div>
+              </div>
+              <span class="active-badge">ACTIVE</span>
+            </div>
+            
+            <ul class="feature-list text-sm text-gray-600 mb-4 space-y-1">
+              <li>Custom website design & development</li>
+              <li>SEO optimization & keyword tracking</li>
+              <li>Monthly performance reports</li>
+              <li>Technical support & maintenance</li>
+            </ul>
+            
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <div class="price-tag">$100/month</div>
+                <div class="starter-fee">$250 setup</div>
+              </div>
+              <button class="text-indigo-600 font-medium text-sm hover:text-indigo-800">
+                View Details
+              </button>
+            </div>
+          </div>
+
+          <!-- Social Media Marketing - Active -->
+          <div class="service-card active p-5 mb-4">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center">
+                <div class="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center mr-4">
+                  <i class="fas fa-share-alt text-pink-600 text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-gray-800">Social Media Marketing</h3>
+                  <p class="text-gray-600 text-sm">Multi-platform growth strategy</p>
+                </div>
+              </div>
+              <span class="active-badge">ACTIVE</span>
+            </div>
+            
+            <ul class="feature-list text-sm text-gray-600 mb-4 space-y-1">
+              <li>Content creation & scheduling</li>
+              <li>Community management</li>
+              <li>Growth analytics & insights</li>
+              <li>Influencer collaboration</li>
+            </ul>
+            
+            <div class="flex items-center justify-between">
+              <div class="price-tag">$400/month</div>
+              <button class="text-pink-600 font-medium text-sm hover:text-pink-800">
+                View Details
+              </button>
+            </div>
+          </div>
+
+          <!-- Google & Meta Ads - Active -->
+          <div class="service-card active p-5 mb-4">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center">
+                <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mr-4">
+                  <i class="fas fa-bullhorn text-green-600 text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-gray-800">Google & Meta Ads</h3>
+                  <p class="text-gray-600 text-sm">Targeted advertising campaigns</p>
+                </div>
+              </div>
+              <span class="active-badge">ACTIVE</span>
+            </div>
+            
+            <ul class="feature-list text-sm text-gray-600 mb-4 space-y-1">
+              <li>Campaign setup & optimization</li>
+              <li>A/B testing & performance tracking</li>
+              <li>Budget management & ROI analysis</li>
+              <li>Monthly strategy consultations</li>
+            </ul>
+            
+            <div class="flex items-center justify-between">
+              <div class="flex flex-col">
+                <div class="price-tag mb-1">$400/month</div>
+                <p class="text-xs text-gray-500">+ ad spend</p>
+              </div>
+              <button class="text-green-600 font-medium text-sm hover:text-green-800">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Available Services -->
+        <div class="fade-in">
+          <h2 class="text-lg font-semibold text-gray-800 mb-4">Add More Services</h2>
+          
+          <!-- AI Agents - Available -->
+          <div class="service-card p-5 mb-4">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center">
+                <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mr-4">
+                  <i class="fas fa-robot text-purple-600 text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-gray-800">AI Agents</h3>
+                  <p class="text-gray-600 text-sm">Automated customer support</p>
+                </div>
+              </div>
+              <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-medium">
+                AVAILABLE
+              </span>
+            </div>
+            
+            <ul class="feature-list text-sm text-gray-600 mb-4 space-y-1">
+              <li>24/7 automated customer support</li>
+              <li>Lead capture & qualification</li>
+              <li>Custom conversation flows</li>
+              <li>Integration with your systems</li>
+            </ul>
+            
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <div class="text-gray-700 font-semibold">$150/month</div>
+                <div class="starter-fee">$250 setup</div>
+              </div>
+              <button class="bg-purple-600 text-white px-4 py-2 rounded-lg font-medium text-sm hover:bg-purple-700 transition-colors">
+                Add Service
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package Upgrade -->
+        <div class="fade-in">
+          <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl p-5 text-white">
+            <div class="flex items-center justify-between mb-3">
+              <div>
+                <h3 class="font-bold text-lg">Enterprise Package</h3>
+                <p class="text-indigo-100 text-sm">All services + priority support</p>
+              </div>
+              <div class="text-right">
+                <p class="font-bold text-xl">Contact Us</p>
+                <p class="text-indigo-100 text-xs">Custom pricing</p>
+              </div>
+            </div>
+            
+            <div class="bg-white/20 rounded-lg p-3 mb-4">
+              <p class="text-sm">
+                <i class="fas fa-star mr-2"></i>
+                Includes all 4 services + dedicated account manager + quarterly strategy sessions + custom integrations
+              </p>
+            </div>
+            
+            <button class="w-full bg-white text-indigo-600 font-semibold py-3 rounded-lg hover:bg-gray-50 transition-colors">
+              <i class="fas fa-phone mr-2"></i>
+              Contact for Enterprise
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Navigation -->
+      <div class="bg-white border-t border-gray-200 px-6 py-4">
+        <div class="flex items-center justify-around">
+          <div class="flex flex-col items-center">
+            <i class="fas fa-home text-gray-400 text-lg mb-1"></i>
+            <span class="text-gray-400 text-xs">Dashboard</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-cogs text-indigo-600 text-lg mb-1"></i>
+            <span class="text-indigo-600 text-xs font-medium">Services</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-folder text-gray-400 text-lg mb-1"></i>
+            <span class="text-gray-400 text-xs">Resources</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-envelope text-gray-400 text-lg mb-1"></i>
+            <span class="text-gray-400 text-xs">Messages</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+                    </div>
+<div class="screen-item">
+                      <h3>Add Client Form</h3>
+                      
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Creations - Add New Client</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .add-client-phone-frame {
+        width: 375px;
+        min-height: 812px;
+        background: #f8fafc;
+        border-radius: 40px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border: 1px solid #e2e8f0;
+        margin: 2rem;
+        display: inline-flex;
+        flex-direction: column;
+      }
+      
+      .admin-gradient-header {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      }
+      
+      .form-section {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      
+      .input-focus:focus {
+        outline: none;
+        border-color: #f59e0b;
+        box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+      }
+      
+      .service-checkbox {
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #d1d5db;
+        border-radius: 4px;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .service-checkbox:checked {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        border-color: #f59e0b;
+      }
+      
+      .service-checkbox:checked::after {
+        content: '✓';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      
+      .fade-in {
+        animation: fadeIn 0.6s ease-out;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .starter-fee {
+        background: #fbbf24;
+        color: #92400e;
+        padding: 2px 6px;
+        border-radius: 8px;
+        font-size: 10px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="add-client-phone-frame">
+      
+      <!-- Header -->
+      <div class="admin-gradient-header px-6 py-6 text-white">
+        <div class="flex items-center justify-between mb-4">
+          <button class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <h1 class="text-lg font-semibold">Add New Client</h1>
+          <button class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+            <i class="fas fa-save"></i>
+          </button>
+        </div>
+        
+        <div class="bg-white/10 rounded-lg p-3">
+          <div class="flex items-center">
+            <i class="fas fa-user-plus mr-3 text-amber-400"></i>
+            <div>
+              <p class="font-semibold">Client Registration</p>
+              <p class="text-slate-300 text-sm">Create account and assign services</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="flex-1 px-6 py-6 space-y-6">
+        
+        <!-- Basic Information -->
+        <div class="fade-in">
+          <div class="form-section p-5">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">
+              <i class="fas fa-user mr-2 text-amber-600"></i>
+              Basic Information
+            </h2>
+            
+            <div class="space-y-4">
+              <div>
+                <label class="block text-gray-700 text-sm font-medium mb-2">Full Name *</label>
+                <input 
+                  type="text" 
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus transition-all duration-300"
+                  placeholder="Enter client's full name"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label class="block text-gray-700 text-sm font-medium mb-2">Email Address *</label>
+                <input 
+                  type="email" 
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus transition-all duration-300"
+                  placeholder="client@company.com"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label class="block text-gray-700 text-sm font-medium mb-2">Company Name</label>
+                <input 
+                  type="text" 
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus transition-all duration-300"
+                  placeholder="Company or business name"
+                />
+              </div>
+              
+              <div>
+                <label class="block text-gray-700 text-sm font-medium mb-2">Phone Number</label>
+                <input 
+                  type="tel" 
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus transition-all duration-300"
+                  placeholder="+1 (555) 123-4567"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Account Setup -->
+        <div class="fade-in">
+          <div class="form-section p-5">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">
+              <i class="fas fa-key mr-2 text-amber-600"></i>
+              Account Setup
+            </h2>
+            
+            <div class="space-y-4">
+              <div>
+                <label class="block text-gray-700 text-sm font-medium mb-2">Temporary Password *</label>
+                <div class="relative">
+                  <input 
+                    type="password" 
+                    class="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg input-focus transition-all duration-300"
+                    placeholder="Generate secure password"
+                    required
+                  />
+                  <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-amber-600">
+                    <i class="fas fa-random"></i>
+                  </button>
+                </div>
+                <p class="text-gray-500 text-xs mt-1">Client will be prompted to change on first login</p>
+              </div>
+              
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-gray-700 text-sm font-medium mb-2">Start Date</label>
+                  <input 
+                    type="date" 
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus transition-all duration-300"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label class="block text-gray-700 text-sm font-medium mb-2">Renewal Date</label>
+                  <input 
+                    type="date" 
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus transition-all duration-300"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Selection -->
+        <div class="fade-in">
+          <div class="form-section p-5">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">
+              <i class="fas fa-cogs mr-2 text-amber-600"></i>
+              Service Selection
+            </h2>
+            
+            <div class="space-y-4">
+              <!-- Website Design & SEO -->
+              <div class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-amber-300 transition-colors">
+                <input type="checkbox" class="service-checkbox mt-1 mr-4" id="website" />
+                <div class="flex-1">
+                  <label for="website" class="flex items-center justify-between cursor-pointer">
+                    <div>
+                      <div class="flex items-center mb-2">
+                        <i class="fas fa-globe text-indigo-600 mr-2"></i>
+                        <h3 class="font-semibold text-gray-800">Website Design & SEO</h3>
+                      </div>
+                      <p class="text-gray-600 text-sm">Custom website with SEO optimization</p>
+                    </div>
+                    <div class="text-right">
+                      <div class="text-amber-600 font-semibold">$100/mo</div>
+                      <div class="starter-fee mt-1">$250 setup</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Social Media Marketing -->
+              <div class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-amber-300 transition-colors">
+                <input type="checkbox" class="service-checkbox mt-1 mr-4" id="social" />
+                <div class="flex-1">
+                  <label for="social" class="flex items-center justify-between cursor-pointer">
+                    <div>
+                      <div class="flex items-center mb-2">
+                        <i class="fas fa-share-alt text-pink-600 mr-2"></i>
+                        <h3 class="font-semibold text-gray-800">Social Media Marketing</h3>
+                      </div>
+                      <p class="text-gray-600 text-sm">Multi-platform growth strategy</p>
+                    </div>
+                    <span class="text-amber-600 font-semibold">$400/mo</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Google & Meta Ads -->
+              <div class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-amber-300 transition-colors">
+                <input type="checkbox" class="service-checkbox mt-1 mr-4" id="ads" />
+                <div class="flex-1">
+                  <label for="ads" class="flex items-center justify-between cursor-pointer">
+                    <div>
+                      <div class="flex items-center mb-2">
+                        <i class="fas fa-bullhorn text-green-600 mr-2"></i>
+                        <h3 class="font-semibold text-gray-800">Google & Meta Ads</h3>
+                      </div>
+                      <p class="text-gray-600 text-sm">Targeted advertising campaigns</p>
+                    </div>
+                    <div class="text-right">
+                      <div class="text-amber-600 font-semibold">$400/mo</div>
+                      <div class="text-xs text-gray-500">+ ad spend</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- AI Agents -->
+              <div class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-amber-300 transition-colors">
+                <input type="checkbox" class="service-checkbox mt-1 mr-4" id="ai" />
+                <div class="flex-1">
+                  <label for="ai" class="flex items-center justify-between cursor-pointer">
+                    <div>
+                      <div class="flex items-center mb-2">
+                        <i class="fas fa-robot text-purple-600 mr-2"></i>
+                        <h3 class="font-semibold text-gray-800">AI Agents</h3>
+                      </div>
+                      <p class="text-gray-600 text-sm">24/7 automated customer support</p>
+                    </div>
+                    <div class="text-right">
+                      <div class="text-amber-600 font-semibold">$150/mo</div>
+                      <div class="starter-fee mt-1">$250 setup</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Total Calculation -->
+            <div class="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-semibold text-gray-800">Monthly Total:</span>
+                <span class="text-2xl font-bold text-amber-600" id="monthly-total">$0/month</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-gray-800">Setup Fees:</span>
+                <span class="text-lg font-bold text-yellow-600" id="setup-total">$0</span>
+              </div>
+              <p class="text-amber-700 text-sm mt-1">Select services to calculate totals</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="fade-in">
+          <div class="flex space-x-3">
+            <button class="flex-1 bg-gray-200 text-gray-700 font-semibold py-3 rounded-lg hover:bg-gray-300 transition-colors">
+              Save as Draft
+            </button>
+            <button class="flex-1 bg-amber-600 text-white font-semibold py-3 rounded-lg hover:bg-amber-700 transition-colors">
+              Create Client
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Calculate total when checkboxes change
+      const checkboxes = document.querySelectorAll('.service-checkbox');
+      const monthlyTotalElement = document.getElementById('monthly-total');
+      const setupTotalElement = document.getElementById('setup-total');
+      
+      const prices = {
+        'website': { monthly: 100, setup: 250 },
+        'social': { monthly: 400, setup: 0 },
+        'ads': { monthly: 400, setup: 0 },
+        'ai': { monthly: 150, setup: 250 }
+      };
+      
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', calculateTotal);
+      });
+      
+      function calculateTotal() {
+        let monthlyTotal = 0;
+        let setupTotal = 0;
+        
+        checkboxes.forEach(checkbox => {
+          if (checkbox.checked) {
+            monthlyTotal += prices[checkbox.id].monthly;
+            setupTotal += prices[checkbox.id].setup;
+          }
+        });
+        
+        monthlyTotalElement.textContent = `$${monthlyTotal.toLocaleString()}/month`;
+        setupTotalElement.textContent = `$${setupTotal.toLocaleString()}`;
+      }
+    </script>
+  </body>
+</html>
+
+                    </div>
+    </div>
+</body>
+</html>
+      
